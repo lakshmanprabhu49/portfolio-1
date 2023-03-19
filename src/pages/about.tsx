@@ -4,6 +4,7 @@ import SocialMediaBar from '@/components/SocialMediaBar'
 import React, {useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet';
 import { useTypewriter } from 'react-simple-typewriter';
+import {motion} from 'framer-motion';
 
 interface IQNA {
     question: string;
@@ -79,25 +80,33 @@ function About() {
   </Helmet>
   <SocialMediaBar/>
     <Header currentPage={Pages.About} isBackgroundBlue={false} />
-    <div className={`font-orelegaOne text-blue1 text-4xl text-center ml-10 mr-36 mt-10 mb-10`}>
+    <motion.div transition={{ease: "backInOut", duration: 0.5}} initial={{y: "-100%"}} animate={{x:0, y:0}}
+        className={`font-orelegaOne text-blue1 text-4xl text-center ml-10 mr-36 mt-10 mb-10`}>
      <span>{headerText}</span>
-    </div>
-    <div className={`font-merriWeather text-brown2 text-3xl text-center ml-10 mr-36 mt-10 mb-10 font-semibold`}>
+    </motion.div>
+    <motion.div transition={{ease: "backInOut", duration: 0.5}} initial={{y: "-100%"}} animate={{x:0, y:0}} 
+        className={`font-merriWeather text-brown2 text-3xl text-center ml-10 mr-36 mt-10 mb-10 font-semibold`}>
      <span>{subtitleText}</span>
-    </div>
+    </motion.div>
     {/* Chat Section */}
-    <div className={'sm:w-3/4 lg:w-3/5 xl:w-1/2 sm:ml-16 lg:ml-60 xl:ml-96 shadow-lg shadow-blue1 drop-shadow-lg min-h-3/4 h-60vh max-h-3/4 rounded-b-10xl inline-block  overflow-y-scroll'}>
+    <motion.div
+        animate={{x:0, y:0, rotate: 0}} initial={{x:"-100%", rotate: 360}} transition={{duration: 1, ease: 'backOut'}} 
+        className={'sm:w-3/4 lg:w-3/5 xl:w-1/2 sm:ml-16 lg:ml-60 xl:ml-96 shadow-lg shadow-blue1 drop-shadow-lg min-h-3/4 h-60vh max-h-3/4 rounded-b-10xl inline-block  overflow-y-scroll scrollbar-none'}>
         {/* Chat header */}
-        <div className={`pl-5 pt-2 pb-3 bg-blue1 rounded-b-5xl`}>
+        <motion.div 
+            animate={{opacity:1}} initial={{opacity:0}} transition={{duration:1.5}}
+            className={`pl-5 pt-2 pb-3 bg-blue1 rounded-b-5xl`}>
             <img src={`./ChatDP.png`} className={`w-28 inline-block -translate-y-3`}></img>
             <div className={`ml-10 pt-6 inline-block`}>
                 <span className={'font-bold text-white font-timesNewRoman text-4xl mt-10'}>Lachu</span>
                 <br/>
                 <span className={'text-brown3 text-xl mt:20'}>Online</span>
             </div>
-        </div>
+        </motion.div>
         {/* Chat area */}
-        <div className={`p-10 `}>
+        <motion.div 
+            animate={{opacity:1}} initial={{opacity:0}} transition={{duration:1.5}}
+        className={`p-10 `}>
             {/* Answered questions */}
         {answeredQuestionsIds.map((answeredQuestionsId) => {
                 return <>
@@ -146,9 +155,9 @@ function About() {
                     </div>
                 })}
             
-        </div>
+        </motion.div>
 
-    </div>
+    </motion.div>
     {/* Chat questions section */}
     <div className='inline-block'>
         Hello
