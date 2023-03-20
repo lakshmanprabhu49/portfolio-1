@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}",],
+  content: ["./src/**/*.{js,ts,jsx,tsx,json}",],
   theme: {
     extend: {
       colors: {
@@ -17,10 +17,29 @@ module.exports = {
         'orelegaOne': ['Orelega One'],
         'palatinoLinotype': ['Palatino Linotype'],
         'timesNewRoman': ['Times New Roman'],
-        'merriweather': ['Merriweather']
+        'merriweather': ['Merriweather'],
+        'rakkas': ['Rakkas']
       },
       margin: {
         '100': '30rem'
+      },
+      minWidth: {
+        '1/5': '20%',
+        '1/4': '25%',
+        '2/5': '40%',
+        '1/2': '50%',
+        '3/5': '40%',
+        '3/4': '75%',
+        '4/5': '75%',
+      },
+      maxWidth: {
+        '1/5': '20%',
+        '1/4': '25%',
+        '2/5': '40%',
+        '1/2': '50%',
+        '3/5': '40%',
+        '3/4': '75%',
+        '4/5': '75%',
       },
       minHeight: {
         '1/2': '50vh',

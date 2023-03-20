@@ -159,9 +159,7 @@ function About() {
 
     </motion.div>
     {/* Chat questions section */}
-    <div className='inline-block'>
-        Hello
-    </div>
+    
    </>
 }
 

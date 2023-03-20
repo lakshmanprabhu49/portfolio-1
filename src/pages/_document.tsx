@@ -11,6 +11,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Palatino+Linotype" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Times+New+Roman" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Rakkas" rel="stylesheet"/>
       </Head>
       <body>
         <Main />
