@@ -3,7 +3,7 @@ import Header from '@/components/Header'
 import SocialMediaBar from '@/components/SocialMediaBar'
 import React, {useEffect, useLayoutEffect} from 'react'
 import { Helmet } from 'react-helmet';
-
+import {motion} from 'framer-motion';
 const technologyFrameworksHeaderText = `Technology Frameworks`;
 
 const languagesHeaderText = `Languages`;
@@ -82,10 +82,14 @@ function Skills() {
   </Helmet>
   <SocialMediaBar/>
     <Header currentPage={Pages.Skills} isBackgroundBlue={true} />
-    <div className={`font-orelegaOne text-white text-5xl text-left ml-36 mr-36 mt-10 mb-10`}>
+    <motion.div 
+      animate={{x:0, y:0}} initial={{x:"-100%"}} transition={{ ease:"backInOut", duration:0.25, delay:0}}
+      className={`font-orelegaOne text-white text-5xl text-left ml-36 mr-36 mt-10 mb-10`}>
      <span>{technologyFrameworksHeaderText}</span>
-    </div>
-    <div className={`p-10 overflow-x-scroll flex scrollbar-none`}>
+    </motion.div>
+    <motion.div 
+      animate={{x:0, y:0}} initial={{x:"100%"}} transition={{ease:"backInOut", duration:0.25, delay:0.5}}
+      className={`p-10 overflow-x-scroll flex scrollbar-none`}>
       {technologyFrameworkSkills.map((technologyFrameworkSkill) => {
         return <div className={`group hover:md:min-w-full hover:md:max-w-full hover:lg:min-w-full hover:lg:max-w-full hover:xl:min-w-3/5 hover:xl:max-w-3/5  hover:shadow-md hover:shadow-white hover:bg-white
           h-3/5 sm:min-w-full sm:max-w-full md:min-w-3/4 md:max-w-3/4 lg:min-w-3/4 lg:max-w-3/4 xl:min-w-2/5 xl:max-w-2/5 inline-block shadow-md p-10 shadow-black rounded-5xl ml-10 bg-blue1`}>
@@ -114,11 +118,15 @@ function Skills() {
           </div>
         </div>
       })}
-    </div>
-    <div className={`font-orelegaOne text-white text-5xl text-left ml-36 mr-36 mt-10 mb-10`}>
+    </motion.div>
+    <motion.div 
+      animate={{x:0, y:0}} initial={{x:"-100%"}} transition={{ease:"backInOut", duration:0.25, delay:1}}
+      className={`font-orelegaOne text-white text-5xl text-left ml-36 mr-36 mt-10 mb-10`}>
      <span>{languagesHeaderText}</span>
-    </div>
-    <div className={`p-10 overflow-x-scroll flex scrollbar-none`}>
+    </motion.div>
+    <motion.div 
+      animate={{x:0, y:0}} initial={{x:"100%"}} transition={{ease:"backInOut", duration:0.25, delay:1.5}}
+      className={`p-10 overflow-x-scroll flex scrollbar-none`}>
       {languagesSkills.map((languageSkill) => {
         return <div className={`group hover:md:min-w-1/2 hover:md:max-w-1/2 hover:lg:min-w-1/2 hover:lg:max-w-1/2 hover:xl:min-w-1/4 hover:xl:max-w-1/4  hover:shadow-md hover:shadow-white hover:bg-white
           h-3/5 sm:min-w-1/2 sm:max-w-full md:min-w-1/3 md:max-w-1/3 lg:min-w-1/4 lg:max-w-1/4 xl:min-w-1/5 xl:max-w-1/5 inline-block shadow-md p-10 shadow-black rounded-5xl ml-10 bg-blue1`}>
@@ -141,7 +149,7 @@ function Skills() {
           </div>
         </div>
       })}
-    </div>
+    </motion.div>
     </>
 }
 
