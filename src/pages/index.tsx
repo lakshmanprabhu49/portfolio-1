@@ -8,7 +8,6 @@ import {motion} from 'framer-motion';
 import { useTypewriter, Cursor} from "react-simple-typewriter";
 import { useEffect, useState , useLayoutEffect} from "react";
 import SocialMediaBar from "@/components/SocialMediaBar";
-import { Slide } from "react-awesome-reveal";
 import { Pages } from "@/common/enums";
 import { Helmet } from 'react-helmet';
 export default function Home() {
@@ -44,7 +43,6 @@ export default function Home() {
      <Cursor cursorColor="white" />
     </div>
     {isWelcomeTextDone && <div >
-      
         <motion.div className={`sm:m-10 sm:mt-5 lg:mt-20 sm:ml-16 lg:ml-28 sm:w-2/5 lg:w-3/6 max-w-2xl bg-gray-700/[.7] sm:p-8 md:p-10 lg:p-16 border-2 border-white rounded-3xl inline-block mb-10`} 
         animate={{x:0 ,y:0 }} 
         transition={{duration: 0.5, ease:"backOut"}}
