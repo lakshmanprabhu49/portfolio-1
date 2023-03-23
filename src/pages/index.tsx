@@ -40,7 +40,7 @@ export default function Home() {
     <Header currentPage={Pages.Home} isBackgroundBlue={true} />
     <div className={`font-orelegaOne text-white text-4xl text-center ml-10 mr-36 mt-10 mb-10`}>
      <span>{welcomeTypewriterText}</span>
-     <Cursor cursorColor="white" />
+     {!isWelcomeTextDone && <Cursor cursorColor="white" />}
     </div>
     {isWelcomeTextDone && <div >
         <motion.div className={`sm:m-10 sm:mt-5 lg:mt-20 sm:ml-16 lg:ml-28 sm:w-2/5 lg:w-3/6 max-w-2xl bg-gray-700/[.7] sm:p-8 md:p-10 lg:p-16 border-2 border-white rounded-3xl inline-block mb-10`} 

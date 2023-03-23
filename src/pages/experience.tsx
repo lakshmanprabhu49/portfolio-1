@@ -4,8 +4,10 @@ import Header from "@/components/Header";
 import SocialMediaBar from "@/components/SocialMediaBar";
 import React, { useEffect, useLayoutEffect } from "react";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
-
+const experienceHeaderText = `Experience is a fancy word for covering up all the mistakes we've made in the past while learning.`
+const experienceSubHeaderText = `Most of my experience falls in FrontEnd Development, but I do have some experience in backend as well`;
 const experinceList: IExperienceList[] = [
   {
     title: "Software Development Engineer",
@@ -49,6 +51,13 @@ function Experience() {
       </Helmet>
       <SocialMediaBar />
       <Header currentPage={Pages.Experience} isBackgroundBlue={false} />
+      <div className={`flex justify-center flex-col items-center`}>
+        <div className={'text-center font-rakkas text-6xl text-blue1'}>
+        {experienceHeaderText}</div>
+        <div className="text-center font-rakkas text-brown2 text-3xl mt-10">
+          {experienceSubHeaderText}
+        </div>
+      </div>
       {/* Accordion Component*/}
       {experinceList.map((experience, index) => {
         return <div className={`flex justify-center`} key={experience.period}>

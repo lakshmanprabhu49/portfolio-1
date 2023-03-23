@@ -4,6 +4,11 @@ import SocialMediaBar from "@/components/SocialMediaBar";
 import React, { useEffect, useLayoutEffect } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+
+const skillsHeaderText = 'Skills are built by repeatedly performing boring stuff over a long period of time...'
+const mySkillsIntroText = `Since I graduated with a CS degree, most of my expertise lies in tech related stuff. Hopefully it matches with the job description, in case you are a recruiter 😁`
+const proTipText = 'Pro tip : '
+const useMouseWheelForHorizontalScrollingText = `Use Shift+MouseWheel for horizontal scrolling if you are viewing this page from a PC (I've removed the scrollbar because of it's annoying style 😅) `;
 const technologyFrameworksHeaderText = `Technology Frameworks`;
 
 const languagesHeaderText = `Languages`;
@@ -78,11 +83,21 @@ function Skills() {
       </Helmet>
       <SocialMediaBar />
       <Header currentPage={Pages.Skills} isBackgroundBlue={true} />
+      <motion.div className={`text-right text-white text-6xl font-rakkas m-20 mb-0`}>
+        {skillsHeaderText}
+      </motion.div>
+      <motion.div className={`ml-20 mr-20 mt-10 text-brown3 text-left text-3xl font-timesNewRoman`}>
+        {mySkillsIntroText}
+      </motion.div>
+      <motion.div className={`ml-20 mr-20 mt-10 text-white font-bold italic`}>
+        <span>{proTipText}</span>
+        <span>{useMouseWheelForHorizontalScrollingText}</span>
+      </motion.div>
       <motion.div
         animate={{ x: 0, y: 0 }}
         initial={{ x: "-100%" }}
         transition={{ ease: "backInOut", duration: 0.25, delay: 0 }}
-        className={`font-orelegaOne text-white text-5xl text-left ml-36 mr-36 mt-10 mb-10`}
+        className={`font-orelegaOne text-white text-4xl text-left ml-36 mr-36 mt-10`}
       >
         <span>{technologyFrameworksHeaderText}</span>
       </motion.div>
@@ -152,7 +167,7 @@ function Skills() {
         animate={{ x: 0, y: 0 }}
         initial={{ x: "-100%" }}
         transition={{ ease: "backInOut", duration: 0.25, delay: 1 }}
-        className={`font-orelegaOne text-white text-5xl text-left ml-36 mr-36 mt-10 mb-10`}
+        className={`font-orelegaOne text-white text-4xl text-left ml-36 mr-36 mt-10`}
       >
         <span>{languagesHeaderText}</span>
       </motion.div>
