@@ -81,22 +81,28 @@ function Skills() {
       <Helmet>
         <body className={`bg-blue1`}></body>
       </Helmet>
-      <SocialMediaBar />
+      {/* <SocialMediaBar /> */}
       <Header currentPage={Pages.Skills} isBackgroundBlue={true} />
-      <motion.div className={`text-right text-white text-6xl font-rakkas m-20 mb-0`}>
+      <motion.div className={`text-right text-white text-6xl font-rakkas sm:m-5 md:m-20 mb-0`} 
+      initial={{x: "-100%", opacity:0}}
+      animate={{opacity:1, x:0}} transition={{duration:0.5}}>
         {skillsHeaderText}
       </motion.div>
-      <motion.div className={`ml-20 mr-20 mt-10 text-brown3 text-left text-3xl font-timesNewRoman`}>
+      <motion.div className={`ml-20 mr-20 mt-10 text-brown3 text-left text-3xl font-timesNewRoman`}
+      initial={{x: "-100%", opacity:0}}
+      animate={{opacity:1, x:0}} transition={{delay: 0.5, duration:0.5}}>
         {mySkillsIntroText}
       </motion.div>
-      <motion.div className={`ml-20 mr-20 mt-10 text-white font-bold italic`}>
+      <motion.div className={`ml-20 mr-20 mt-10 text-white font-bold italic`}
+      initial={{x: "100%", opacity:0}}
+      animate={{opacity:1, x:0}} transition={{delay: 0.5, duration:0.5}}>
         <span>{proTipText}</span>
         <span>{useMouseWheelForHorizontalScrollingText}</span>
       </motion.div>
       <motion.div
         animate={{ x: 0, y: 0 }}
         initial={{ x: "-100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 0 }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 3 }}
         className={`font-orelegaOne text-white text-4xl text-left ml-36 mr-36 mt-10`}
       >
         <span>{technologyFrameworksHeaderText}</span>
@@ -104,7 +110,7 @@ function Skills() {
       <motion.div
         animate={{ x: 0, y: 0 }}
         initial={{ x: "100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 0.5 }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 3.5 }}
         className={`p-10 overflow-x-scroll flex scrollbar-none`}
       >
         {technologyFrameworkSkills.map((technologyFrameworkSkill) => {
@@ -166,7 +172,7 @@ function Skills() {
       <motion.div
         animate={{ x: 0, y: 0 }}
         initial={{ x: "-100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 1 }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 4 }}
         className={`font-orelegaOne text-white text-4xl text-left ml-36 mr-36 mt-10`}
       >
         <span>{languagesHeaderText}</span>
@@ -174,7 +180,7 @@ function Skills() {
       <motion.div
         animate={{ x: 0, y: 0 }}
         initial={{ x: "100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 1.5 }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 4.5 }}
         className={`p-10 overflow-x-scroll flex scrollbar-none`}
       >
         {languagesSkills.map((languageSkill) => {

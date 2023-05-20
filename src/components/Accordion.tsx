@@ -5,6 +5,7 @@ export interface IExperienceList {
   title: string;
   company: string;
   period: string;
+  technologiesUsed: string;
   bodyPara: string;
   bodyBulletPoints: string[];
 }
@@ -26,6 +27,7 @@ const Accordion = ({
   title,
   company,
   period,
+  technologiesUsed,
   bodyPara,
   bodyBulletPoints,
   isTextWhite,
@@ -64,6 +66,7 @@ const Accordion = ({
           </div>
           <div className={`font-timesNewRoman font-bold text-xl`}>{period}</div>
         </div>
+        <div className={`ml-20 font-rakkas text-2xl ${isTextWhite ? 'text-brown3' : 'text-brown2'}`}>{technologiesUsed}</div>
         <motion.div
           className={`p-5 font-palatinoLinotype text-xl `}
           variants={accordionMotionVariants}

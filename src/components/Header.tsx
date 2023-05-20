@@ -9,7 +9,7 @@ interface HeaderProps {
 }
 const Header = ({ currentPage, isBackgroundBlue }: HeaderProps) => {
   return (
-    <div className={`sm:m-2 sm:mb-12 lg:m-4 lg:ml-8 lg:mb-12`}>
+    <div className={`sm:m-2 sm:mb-12 lg:m-4 lg:ml-8 lg:mb-12 `}>
       <HeaderItem headerItemName={'Home'} isSelected={currentPage === 'Home'} isBackgroundBlue={isBackgroundBlue} pageRoute = {''}/>
       <HeaderItem headerItemName={'About'} isSelected={currentPage === 'About'} isBackgroundBlue={isBackgroundBlue} pageRoute = {'about'}/>
       <HeaderItem headerItemName={'Skills'} isSelected={currentPage === 'Skills'} isBackgroundBlue={isBackgroundBlue} pageRoute = {'skills'}/>

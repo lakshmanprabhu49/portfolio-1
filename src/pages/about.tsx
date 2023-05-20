@@ -100,13 +100,13 @@ function About() {
       <Helmet>
         <body className={`bg-white`}></body>
       </Helmet>
-      <SocialMediaBar />
+      {/* <SocialMediaBar /> */}
       <Header currentPage={Pages.About} isBackgroundBlue={false} />
-      <motion.div
+      <motion.div 
         transition={{ ease: "backInOut", duration: 0.5 }}
         initial={{ y: "-100%" }}
         animate={{ x: 0, y: 0 }}
-        className={`font-orelegaOne text-blue1 text-4xl text-center ml-10 mr-36 mt-10 mb-10`}
+        className={`font-orelegaOne text-blue1 text-4xl text-center ml-10 mr-36 mt-10 mb-10 w-full`}
       >
         <span>{headerText}</span>
       </motion.div>
@@ -114,7 +114,7 @@ function About() {
         transition={{ ease: "backInOut", duration: 0.5 }}
         initial={{ y: "-100%" }}
         animate={{ x: 0, y: 0 }}
-        className={`font-merriWeather text-brown2 text-3xl text-center ml-10 mr-36 mt-10 mb-10 font-semibold`}
+        className={`font-merriWeather text-brown2 text-3xl text-center ml-10 mr-36 mt-10 mb-10 font-semibold w-full`}
       >
         <span>{subtitleText}</span>
       </motion.div>
@@ -124,7 +124,7 @@ function About() {
         initial={{ x: "-100%", rotate: 360 }}
         transition={{ duration: 1, ease: "backOut" }}
         className={
-          "sm:w-3/4 lg:w-3/5 xl:w-1/2 sm:ml-16 lg:ml-60 xl:ml-96 shadow-lg shadow-blue1 drop-shadow-lg min-h-3/4 h-60vh max-h-3/4 rounded-b-10xl inline-block  overflow-y-scroll scrollbar-none"
+          "sm:w-full lg:w-3/5 xl:w-1/2 sm:ml-16 lg:ml-60 xl:ml-96 shadow-lg shadow-blue1 drop-shadow-lg min-h-3/4 h-60vh max-h-3/4 rounded-b-10xl inline-block  overflow-y-scroll scrollbar-none"
         }
       >
         {/* Chat header */}

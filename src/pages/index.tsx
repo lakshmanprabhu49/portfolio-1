@@ -15,7 +15,7 @@ export default function Home() {
   const welcomeText = "As long as there are programs,          there are always bugs;          and so do software engineers.😁"
   const [welcomeTypewriterText, welcomeTypeWriterHelper] = useTypewriter({
     words: [welcomeText],
-    typeSpeed: 70,
+    typeSpeed: 10,
     onLoopDone() {
         setIsWelcomeTextDone(true)
     },
@@ -31,19 +31,18 @@ export default function Home() {
   }
   
   const [isWelcomeTextDone, setIsWelcomeTextDone] = useState(false);
-  return <>
+  return <div className={`w-full h-full`}>
   <Helmet>
     <body className={`bg-blue1`}></body>
   </Helmet>
   
-  <SocialMediaBar/>
     <Header currentPage={Pages.Home} isBackgroundBlue={true} />
-    <div className={`font-orelegaOne text-white text-4xl text-center ml-10 mr-36 mt-10 mb-10`}>
+    <div className={`font-orelegaOne text-white text-4xl text-center ml-10 mr-36 mt-10 mb-10 w-full`}>
      <span>{welcomeTypewriterText}</span>
      {!isWelcomeTextDone && <Cursor cursorColor="white" />}
     </div>
-    {isWelcomeTextDone && <div >
-        <motion.div className={`sm:m-10 sm:mt-5 lg:mt-20 sm:ml-16 lg:ml-28 sm:w-2/5 lg:w-3/6 max-w-2xl bg-gray-700/[.7] sm:p-8 md:p-10 lg:p-16 border-2 border-white rounded-3xl inline-block mb-10`} 
+    {isWelcomeTextDone && <div className={`w-full`}>
+        <motion.div className={`xs:p-5 sm:m-10 sm:mt-5 lg:mt-20 sm:ml-16 lg:ml-28 sm:w-2/5 lg:w-3/6 max-w-2xl bg-gray-700/[.7] sm:p-8 md:p-10 lg:p-16 border-2 border-white rounded-3xl inline-block mb-10`} 
         animate={{x:0 ,y:0 }} 
         transition={{duration: 0.5, ease:"backOut"}}
         initial={{x: "-100vw"}}>
@@ -57,5 +56,7 @@ export default function Home() {
         className={`sm:w-2/5 lg:w-2/6 inline-block float-right`}
         src={`./PortfolioCoverPic.png`}></motion.img>
       </div>}
-  </> 
+  {/* <SocialMediaBar/> */}
+
+  </div> 
 }
