@@ -206,7 +206,7 @@ function About() {
           {!answeringAQuestion &&
             remainingQuestionsIds.map((remainingQuestionsId) => {
               return (
-                <div className={`flex justify-end`}>
+                <div className={`flex justify-end`} key={remainingQuestionsId}>
                   <span
                     className={`bg-brown2 text-right font-merriweather font-bold text-white m-2 p-3 rounded-t-5xl rounded-bl-5xl text-sm`}
                   >

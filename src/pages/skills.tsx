@@ -116,7 +116,7 @@ function Skills() {
       >
         {technologyFrameworkSkills.map((technologyFrameworkSkill) => {
           return (
-            <div
+            <div key={technologyFrameworkSkill.name}
               className={`group hover:md:min-w-full hover:md:max-w-full hover:lg:min-w-full hover:lg:max-w-full hover:xl:min-w-3/5 hover:xl:max-w-3/5  hover:shadow-md hover:shadow-white hover:bg-white
           h-3/5 sm:min-w-full sm:max-w-full md:min-w-3/4 md:max-w-3/4 lg:min-w-3/4 lg:max-w-3/4 xl:min-w-2/5 xl:max-w-2/5 inline-block shadow-md p-10 shadow-black rounded-5xl ml-10 bg-blue1`}
             >
@@ -161,7 +161,7 @@ function Skills() {
                 <ol className="list-disc pl-5">
                   {technologyFrameworkSkill.bodyBulletPoints.map(
                     (bulletPoint) => {
-                      return <li>{`${bulletPoint}`}</li>;
+                      return <li key={bulletPoint}>{`${bulletPoint}`}</li>;
                     }
                   )}
                 </ol>
@@ -186,7 +186,7 @@ function Skills() {
       >
         {languagesSkills.map((languageSkill) => {
           return (
-            <div
+            <div key={languageSkill.name}
               className={`group hover:md:min-w-1/2 hover:md:max-w-1/2 hover:lg:min-w-1/2 hover:lg:max-w-1/2 hover:xl:min-w-1/4 hover:xl:max-w-1/4  hover:shadow-md hover:shadow-white hover:bg-white
           h-3/5 sm:min-w-1/2 sm:max-w-full md:min-w-1/3 md:max-w-1/3 lg:min-w-1/4 lg:max-w-1/4 xl:min-w-1/5 xl:max-w-1/5 inline-block shadow-md p-10 shadow-black rounded-5xl ml-10 bg-blue1`}
             >
@@ -208,7 +208,7 @@ function Skills() {
               >
                 <ol className="list-disc pl-5">
                   {languageSkill.bodyBulletPoints.map((bulletPoint) => {
-                    return <li>{`${bulletPoint}`}</li>;
+                    return <li key={bulletPoint}>{`${bulletPoint}`}</li>;
                   })}
                 </ol>
               </div>

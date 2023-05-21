@@ -85,7 +85,7 @@ const Accordion = ({
               // transition={{duration: 1}}
               animate={isOpen ? "open" : "closed"}>
                 {bodyBulletPoints.map((bulletPoint) => {
-                  return <li>{`${bulletPoint}`}</li>;
+                  return <li key={bulletPoint}>{`${bulletPoint}`}</li>;
                 })}
               </motion.ol>
             </>
