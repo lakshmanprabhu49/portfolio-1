@@ -1,44 +1,49 @@
 import React from 'react'
-import {Colors, SocialMediaLinks, SocialMediaNames} from '@/common/enums'
+import {Colors, ContactLinks, ContactNames} from '@/common/enums'
 import {motion} from 'framer-motion';
 import logo from 'public/InstagramLogo.png'
 import Image from 'next/image';
 
 const SocialMediaBar = () => {
 
-  return <span className={`bg-brown1 float-right pl-3 pr-2  rounded-tl-3xl rounded-bl-3xl`}>
+  return <div className={`flex flex-row justify-evenly items-between flex-wrap`}>
 
-     <SocialMediaIcon icon={SocialMediaNames.Instagram}>
+     <SocialMediaIcon icon={ContactNames.Instagram}>
      </SocialMediaIcon>
-     <SocialMediaIcon icon={SocialMediaNames.LinkedIn}>
+     <SocialMediaIcon icon={ContactNames.LinkedIn}>
      </SocialMediaIcon>
-     <SocialMediaIcon icon={SocialMediaNames.GitHub}>
+     <SocialMediaIcon icon={ContactNames.GitHub}>
      </SocialMediaIcon>
-     <SocialMediaIcon icon={SocialMediaNames.CodingNinjas}>
+     <SocialMediaIcon icon={ContactNames.CodingNinjas}>
      </SocialMediaIcon>
-  </span>
+     <SocialMediaIcon icon={ContactNames.LeetCode}>
+     </SocialMediaIcon>
+  </div>
 }
 
 interface ISocialMediaIcon extends JSX.ElementChildrenAttribute {
-     icon: SocialMediaNames,
+     icon: ContactNames,
 }
 
 export const SocialMediaIcon: React.FC<ISocialMediaIcon> = ({icon}): JSX.Element => {
      const logo = require(`../../public/${icon}Logo.png`).default
-     return <div className='mt-3 mb-3'>
+     return <div className='flex flex-row justify-center'> 
+          <div className='sm:m-5 sm:p-5 flex flex-col justify-center items-center rounded-5xl lg:m-10 '>
                <a
-              href={SocialMediaLinks[icon+"URL"]}
+              href={ContactLinks[icon+"URL"]}
             >
-              <Image
+              <img
                 src={`/${icon}Logo.png`}
-                alt="Instagram Logo"
-                width={30}
-                height={30}
+                alt="Logo"
+                width={100}
+                height={100}
                 style= {{
-                    color: 'pink'
+                    color: 'white'
                 }}
               />
             </a>
+            <span className='font-orelegaOne text-white text-2xl'>{icon}</span>
+     </div>
      </div>
 }
 

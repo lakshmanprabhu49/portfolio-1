@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 interface IQNA {
   question: string;
@@ -99,6 +100,7 @@ function About() {
     <>
       <Helmet>
         <body className={`bg-white`}></body>
+        
       </Helmet>
       {/* <SocialMediaBar /> */}
       <Header currentPage={Pages.About} isBackgroundBlue={false} />
@@ -106,7 +108,7 @@ function About() {
         transition={{ ease: "backInOut", duration: 0.5 }}
         initial={{ y: "-100%" }}
         animate={{ x: 0, y: 0 }}
-        className={`font-orelegaOne text-blue1 text-4xl text-center ml-10 mr-36 mt-10 mb-10 w-full`}
+        className={`font-orelegaOne text-blue1 text-4xl text-center sm:m-5 lg:m-10`}
       >
         <span>{headerText}</span>
       </motion.div>
@@ -114,17 +116,18 @@ function About() {
         transition={{ ease: "backInOut", duration: 0.5 }}
         initial={{ y: "-100%" }}
         animate={{ x: 0, y: 0 }}
-        className={`font-merriWeather text-brown2 text-3xl text-center ml-10 mr-36 mt-10 mb-10 font-semibold w-full`}
+        className={`font-merriWeather text-brown2 text-3xl text-center sm:m-5 lg:m-10 font-semibold`}
       >
         <span>{subtitleText}</span>
       </motion.div>
+      <div className={`flex justify-center items-center `}>
       {/* Chat Section */}
       <motion.div
         animate={{ x: 0, y: 0, rotate: 0 }}
         initial={{ x: "-100%", rotate: 360 }}
         transition={{ duration: 1, ease: "backOut" }}
         className={
-          "sm:w-full lg:w-3/5 xl:w-1/2 sm:ml-16 lg:ml-60 xl:ml-96 shadow-lg shadow-blue1 drop-shadow-lg min-h-3/4 h-60vh max-h-3/4 rounded-b-10xl inline-block  overflow-y-scroll scrollbar-none"
+          "shadow-lg shadow-blue1 drop-shadow-lg inline-block overflow-y-scroll scrollbar-none sm:w-9/10 lg:w-2/3 xl:w-1/2"
         }
       >
         {/* Chat header */}
@@ -221,6 +224,11 @@ function About() {
         </motion.div>
       </motion.div>
       {/* Chat questions section */}
+      </div>
+      <footer>
+    <Footer isBackgroundBlue={false}/>
+
+    </footer>
     </>
   );
 }

@@ -2,6 +2,22 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,json}",],
   theme: {
+    screens: {
+      'sm': '320px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '480px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '768px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1024px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
     extend: {
       colors: {
         blue1: '#2D364F',
@@ -31,6 +47,7 @@ module.exports = {
         '3/5': '40%',
         '3/4': '75%',
         '4/5': '75%',
+        '9/10': '90%',
       },
       maxWidth: {
         '1/5': '20%',
@@ -40,6 +57,7 @@ module.exports = {
         '3/5': '40%',
         '3/4': '75%',
         '4/5': '75%',
+        '9/10': '90%',
       },
       minHeight: {
         '1/2': '50vh',
@@ -50,6 +68,16 @@ module.exports = {
         '3/5': '60vh',
         '3/4': '75vh',
         '7/8': '88vh',
+      },
+      width: {
+        '1/5': '20%',
+        '1/4': '25%',
+        '2/5': '40%',
+        '1/2': '50%',
+        '3/5': '40%',
+        '3/4': '75%',
+        '4/5': '75%',
+        '9/10': '90%',
       },
       height: {
         '60vh': '60vh',

@@ -35,38 +35,40 @@ const Accordion = ({
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className={`w-4/5 p-10 pb-5 mt-10  rounded-t-3xl rounded-b-5xl
+      className={`sm:w-9/10 lg:w-5/6 sm:p-5 sm:m-5 lg:p-10 lg:m-10  rounded-t-3xl rounded-b-5xl
     ${isTextWhite ? "bg-blue1 text-white" : "bg-blue2 text-blue1"}`}
     >
       <div>
-        <div className={`flex justify-between`}>
+        <div className={`flex sm:justify-start lg:justify-between`}>
           <div className={``}>
             <motion.button
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
-              animate={{ rotateZ: isOpen ? 90 : 0 , x: isOpen ? '-25px' : 0, y: isOpen ? '10px' : 0}}
+              animate={{ rotateZ: isOpen ? 90 : 0 , x: isOpen ? 0 : 0, y: isOpen ? '10px' : 0}}
               transition={{ duration: 0.1 }}
             >
               <img
                 src={
                   isTextWhite ? "./TriangleWhite.png" : "./TriangleBlack.png"
                 }
-                className={`inline-block w-10 -translate-y-2 mr-10 ${
+                className={`inline-block w-10  mr-10 ${
                   isTextWhite ? "fill-white" : "fill-black"
                 }`}
               />
             </motion.button>
-            <span className={`font-merriweather font-bold sm:text-2xl xl:text-3xl`}>
-              {title + " - "}
-            </span>
-            <span className={`font-merriweather italic font-bold sm:text-2xl xl:text-3xl`}>
-              {company}
-            </span>
+            
           </div>
-          <div className={`font-timesNewRoman font-bold text-xl`}>{period}</div>
+          <div className="flex-row justify-around">
+            <span className={`font-merriweather font-bold sm:text-2xl xl:text-3xl`}>
+                {title + " - " + company}
+              </span>
+          </div>
+          <span className={`font-timesNewRoman font-bold text-xl`}>{period}</span>
         </div>
-        <div className={`ml-20 font-rakkas text-2xl ${isTextWhite ? 'text-brown3' : 'text-brown2'}`}>{technologiesUsed}</div>
+        <div className="flex justify-evenly">
+        <div className={`sm:m-2 lg:m-5 font-rakkas text-3xl ${isTextWhite ? 'text-brown3' : 'text-brown2'}`}>{technologiesUsed}</div>
+        </div>
         <motion.div
           className={`p-5 font-palatinoLinotype text-xl `}
           variants={accordionMotionVariants}

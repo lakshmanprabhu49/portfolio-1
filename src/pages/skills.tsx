@@ -4,6 +4,7 @@ import SocialMediaBar from "@/components/SocialMediaBar";
 import React, { useEffect, useLayoutEffect } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 const skillsHeaderText = 'Skills are built by repeatedly performing boring stuff over a long period of time...'
 const mySkillsIntroText = `Since I graduated with a CS degree, most of my expertise lies in tech related stuff. Hopefully it matches with the job description, in case you are a recruiter 😁`
@@ -83,35 +84,35 @@ function Skills() {
       </Helmet>
       {/* <SocialMediaBar /> */}
       <Header currentPage={Pages.Skills} isBackgroundBlue={true} />
-      <motion.div className={`text-right text-white text-6xl font-rakkas sm:m-5 md:m-20 mb-0`} 
-      initial={{x: "-100%", opacity:0}}
-      animate={{opacity:1, x:0}} transition={{duration:0.5}}>
+      <motion.div className={`text-center text-white text-6xl font-rakkas sm:m-5 md:m-20 mb-0 z-50`} 
+      initial={{y: "-100vh", opacity:0}}
+      animate={{opacity:1, x:0, y:0}} transition={{duration:0.5}}>
         {skillsHeaderText}
       </motion.div>
-      <motion.div className={`ml-20 mr-20 mt-10 text-brown3 text-left text-3xl font-timesNewRoman`}
-      initial={{x: "-100%", opacity:0}}
-      animate={{opacity:1, x:0}} transition={{delay: 0.5, duration:0.5}}>
+      <motion.div className={`ml-20 mr-20 mt-10 text-brown3 text-left text-3xl font-timesNewRoman z-50`}
+      initial={{y: "-100vh", opacity:0}}
+      animate={{opacity:1, x:0, y:0}} transition={{delay: 0.5, duration:0.5}}>
         {mySkillsIntroText}
       </motion.div>
-      <motion.div className={`ml-20 mr-20 mt-10 text-white font-bold italic`}
-      initial={{x: "100%", opacity:0}}
-      animate={{opacity:1, x:0}} transition={{delay: 0.5, duration:0.5}}>
+      <motion.div className={`ml-20 mr-20 mt-10 text-white font-bold italic z-50`}
+      initial={{y: "-100vh", opacity:0}}
+      animate={{opacity:1, y:0}} transition={{delay: 0.5, duration:0.5}}>
         <span>{proTipText}</span>
         <span>{useMouseWheelForHorizontalScrollingText}</span>
       </motion.div>
       <motion.div
         animate={{ x: 0, y: 0 }}
-        initial={{ x: "-100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 3 }}
-        className={`font-orelegaOne text-white text-4xl text-left ml-36 mr-36 mt-10`}
+        initial={{ y: "-100vh" }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 1 }}
+        className={`font-orelegaOne text-white text-4xl text-left ml-36 mr-36 mt-10 z-50`}
       >
         <span>{technologyFrameworksHeaderText}</span>
       </motion.div>
       <motion.div
         animate={{ x: 0, y: 0 }}
-        initial={{ x: "100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 3.5 }}
-        className={`p-10 overflow-x-scroll flex scrollbar-none`}
+        initial={{ y: "-100vh" }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 1.5 }}
+        className={`p-5 overflow-x-scroll flex scrollbar-none z-10`}
       >
         {technologyFrameworkSkills.map((technologyFrameworkSkill) => {
           return (
@@ -171,17 +172,17 @@ function Skills() {
       </motion.div>
       <motion.div
         animate={{ x: 0, y: 0 }}
-        initial={{ x: "-100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 4 }}
-        className={`font-orelegaOne text-white text-4xl text-left ml-36 mr-36 mt-10`}
+        initial={{ y: "-100vh" }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 2 }}
+        className={`font-orelegaOne text-white text-4xl text-left ml-10 z-50`}
       >
         <span>{languagesHeaderText}</span>
       </motion.div>
       <motion.div
         animate={{ x: 0, y: 0 }}
-        initial={{ x: "100%" }}
-        transition={{ ease: "backInOut", duration: 0.25, delay: 4.5 }}
-        className={`p-10 overflow-x-scroll flex scrollbar-none`}
+        initial={{ y: "-100vh" }}
+        transition={{ ease: "backInOut", duration: 0.25, delay: 2.5 }}
+        className={`p-5 overflow-x-scroll flex scrollbar-none z-10`}
       >
         {languagesSkills.map((languageSkill) => {
           return (
@@ -215,6 +216,10 @@ function Skills() {
           );
         })}
       </motion.div>
+      <footer>
+    <Footer isBackgroundBlue={true}/>
+
+    </footer>
     </>
   );
 }

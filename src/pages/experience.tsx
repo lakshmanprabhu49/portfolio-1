@@ -5,6 +5,7 @@ import SocialMediaBar from "@/components/SocialMediaBar";
 import React, { useEffect, useLayoutEffect } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 const experienceHeaderText = `Experience is a fancy word for covering up all the mistakes we've made in the past while learning.`
 const experienceSubHeaderText = `Most of my experience falls in FrontEnd Development, but I do have some experience in backend as well`;
@@ -54,16 +55,17 @@ function Experience() {
       </Helmet>
       {/* <SocialMediaBar /> */}
       <Header currentPage={Pages.Experience} isBackgroundBlue={false} />
-      <motion.div className={`flex justify-center flex-col items-center`}
-      initial={{y:"-100%", opacity: 0}} animate={{y:0, opacity:1 }} transition={{duration: 1}} >
-        <div className={'text-center font-rakkas text-6xl text-blue1'}>
+      <motion.div className={`flex justify-center flex-col items-center `}
+      initial={{y:"-100vh", opacity: 0}} animate={{y:0, opacity:1 }} transition={{duration: 1}} >
+        <div className={'text-center font-rakkas text-6xl text-blue1 sm:m-2 lg:m-5'}>
         {experienceHeaderText}</div>
-        <div className="text-center font-rakkas text-brown2 text-3xl mt-10">
+        <div className="text-center font-rakkas text-brown2 text-3xl sm:m-2 lg:m-5">
           {experienceSubHeaderText}
         </div>
       </motion.div>
       {/* Accordion Component*/}
-      <motion.div initial={{y:"-100%", opacity: 0}} animate={{y:0, opacity:1 }} transition={{duration: 1}}>
+      <motion.div initial={{y:"-100vh", opacity: 0}} animate={{y:0, opacity:1 }} transition={{duration: 1}}
+        className={`flex-col `}>
 
       {experinceList.map((experience, index) => {
         return <div className={`flex justify-center`} key={experience.period}>
@@ -77,7 +79,10 @@ function Experience() {
         </div>
       })}
       </motion.div>
+      <footer>
+    <Footer isBackgroundBlue={false}/>
 
+    </footer>
     </>
   );
 }
